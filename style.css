@@ -44,23 +44,27 @@ body {
 }
 
 .navigation ul {
-    
+
     display: flex;
     align-items: center;
     gap: 5rem;
 }
 
-.navigation ul li a {
-    color: var(--dark);  
+
+
+
+.nav-item {
+    color: var(--dark);
     font-size: 17px;
     font-weight: 500;
     transition: all 0.5s;
+    cursor: pointer;
 }
 
-.navigation ul li a:hover {
+.nav-item:hover {
     color: var(--red);
-   
-    
+
+
 }
 
 .navigation i {
@@ -86,10 +90,10 @@ body {
 
 .menu .bar:nth-child(1),
 .menu .bar:nth-child(3) {
-background: var(--red);
+    background: var(--red);
 }
 
-.home{
+.home {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -99,30 +103,32 @@ background: var(--red);
 
 }
 
-.home-text{
+.home-text {
     max-width: 37rem;
 
 }
-.home-text .text-h4{
+
+.home-text .text-h4 {
     font-size: 1.5rem;
     color: var(--red);
     margin-bottom: 1rem;
-    line-height: 4rem; 
+    line-height: 4rem;
 
 }
-.home-text .text-h1{
-    font-size:4rem;
+
+.home-text .text-h1 {
+    font-size: 4rem;
     margin-bottom: 1rem;
     line-height: 4rem;
 }
 
 
-.home-text p{
+.home-text p {
     margin-bottom: 4rem;
 
 }
 
-.home-btn{
+.home-btn {
     padding: 15px 45px;
     background: var(--red);
     color: var(--white);
@@ -131,17 +137,93 @@ background: var(--red);
     transition: all 0.5s;
 
 }
-.home-btn:hover{
-    background:#fe4c35;
+
+.home-btn:hover {
+    background: #fe4c35;
 }
 
-.home-img{
-   width: 50%;
-   margin-left: auto;
+.home-img {
+    width: 100%;
+    margin-left: auto;
 
 }
-#img-hamburger{
+
+#img-hamburger {
     width: 599px;
-    
+
 }
 
+@media (max-width:785px) {
+    .navigation {
+        padding: 18px 20px;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .menu.ativo .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45px);
+    }
+    .menu.ativo .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu.ativo .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: 100%;
+        top: 70px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background: var(--white);
+        gap: -10px;
+        transition: 0.3s;
+    }
+
+    .nav-menu.ativo {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    /*main*/
+    .home {
+        padding: 100px 2%;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+        gap: 5rem;
+
+
+    }
+
+    .home.text-4 {
+        font-size: 15px;
+
+    }
+
+    .home-text-h1 {
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+
+    .home p {
+        font-size: 15px;
+
+
+    }
+
+    .home-img {
+        width: 125%
+    }
+
+
+
+}
